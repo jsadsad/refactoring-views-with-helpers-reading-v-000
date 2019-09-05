@@ -41,3 +41,6 @@ Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0
 Processing by PostsController#new as HTML
   Rendering posts/new.html.erb within layouts/application
   Rendered posts/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 438ms (Views: 407.6ms | ActiveRecord: 0.7ms)
+
+
