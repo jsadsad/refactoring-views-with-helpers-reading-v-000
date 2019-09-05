@@ -12067,3 +12067,51 @@ app/models/post.rb:8:in `updated_at'
 app/models/post.rb:8:in `updated_at'
 app/views/posts/index.html.erb:2:in `block in _app_views_posts_index_html_erb___2011640987789130953_70017030261560'
 app/views/posts/index.html.erb:1:in `_app_views_posts_index_html_erb___2011640987789130953_70017030261560'
+Started GET "/" for 50.255.9.121 at 2019-09-05 21:49:08 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 25ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 50.255.9.121 at 2019-09-05 21:49:14 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 215ms (Views: 206.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 50.255.9.121 at 2019-09-05 21:49:23 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 50.255.9.121 at 2019-09-05 21:49:35 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FtXWWa+XpPkrcUt0fxLTCaohUNWYlzSwtk0V50OskG3Od7cTLSWGoFHS1fURlrZyzsA3jZYpjw1q9wrnkf1tNQ==", "post"=>{"title"=>"rock climbibng", "description"=>"let's climb"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rock Climbibng"], ["description", "let's climb"], ["created_at", "2019-09-05 21:49:35.979721"], ["updated_at", "2019-09-05 21:49:35.979721"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.14.28:50945/posts/3
+Completed 302 Found in 8ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/posts/3" for 50.255.9.121 at 2019-09-05 21:49:36 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
