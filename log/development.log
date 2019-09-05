@@ -63,3 +63,24 @@ app/controllers/posts_controller.rb:15:in `create'
   Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+Started POST "/posts" for 50.255.9.121 at 2019-09-05 21:17:37 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hv2zHvCUfRzx71Sps3uLkoMcwoj0021J62v5GaTIqkLGX9JUciZfRYtMyijd/+7p5/2l0Ppt1vQ30eYZdplXGg==", "post"=>{"title"=>"test", "description"=>"testing"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test"], ["description", "testing"], ["created_at", "2019-09-05 21:17:37.397386"], ["updated_at", "2019-09-05 21:17:37.397386"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.14.28:50945/posts/2
+Completed 302 Found in 16ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/2" for 50.255.9.121 at 2019-09-05 21:17:37 +0000
+Cannot render console from 50.255.9.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
